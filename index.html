@@ -9,139 +9,8 @@
 <meta name="apple-mobile-web-app-title" content="H6 PHEV19">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
-<title>HAVAL H6 PHEV19</title>
-</style>
-/* --- CONTROLE MENSAL DE ABASTECIMENTOS --- */
-.trk-card {
-  background: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 16px;
-  padding: 18px;
-  margin-top: 20px;
-  color: #f8fafc;
-}
-.trk-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 14px;
-}
-.trk-header h2 {
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0;
-  color: #38bdf8;
-}
-.trk-btn-reset {
-  background: transparent;
-  border: 1px solid #ef4444;
-  color: #f87171;
-  font-size: 0.75rem;
-  padding: 5px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.trk-resumo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-.trk-box {
-  background: #0f172a;
-  border: 1px solid #334155;
-  border-radius: 12px;
-  padding: 12px;
-}
-.trk-box-label {
-  font-size: 0.75rem;
-  color: #94a3b8;
-  display: block;
-  margin-bottom: 4px;
-}
-.trk-box-val {
-  font-size: 1.15rem;
-  font-weight: 700;
-  display: block;
-}
-.trk-gas { color: #fbbf24; }
-.trk-ele { color: #34d399; }
-.trk-box-sub {
-  font-size: 0.72rem;
-  color: #64748b;
-  margin-top: 2px;
-  display: block;
-}
-.trk-total-geral {
-  background: #0f172a;
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-size: 0.82rem;
-  color: #cbd5e1;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-.trk-form-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr 1fr;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-.trk-input {
-  width: 100%;
-  box-sizing: border-box;
-  background: #0f172a;
-  border: 1px solid #475569;
-  color: #f8fafc;
-  padding: 10px 8px;
-  border-radius: 10px;
-  font-size: 0.88rem;
-}
-.trk-btn-add {
-  width: 100%;
-  background: #0284c7;
-  color: #fff;
-  border: none;
-  padding: 11px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-.trk-btn-add.editando {
-  background: #d97706;
-}
-.trk-ultimo-linha {
-  margin-top: 12px;
-  background: #0f172a;
-  border: 1px dashed #475569;
-  border-radius: 10px;
-  padding: 8px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  font-size: 0.76rem;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.trk-ultimo-texto {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: #e2e8f0;
-}
-.trk-btn-edit {
-  background: #334155;
-  color: #38bdf8;
-  border: none;
-  padding: 4px 9px;
-  border-radius: 6px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  cursor: pointer;
-  flex-shrink: 0;
-}
+<title>H6 PHEV19</title>
+<style>
 :root{color-scheme:dark;--bg:#090d16;--card:#111827;--surface:#1a2333;--border:#263248;--cyan:#06b6d4;--green:#10b981;--rose:#f43f5e;--muted:#94a3b8}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f8fafc;font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:35px;-webkit-tap-highlight-color:transparent}
 header{position:sticky;top:0;z-index:5;background:#090d16ed;backdrop-filter:blur(14px);border-bottom:1px solid #263248;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
@@ -169,6 +38,26 @@ input:focus{border-color:var(--cyan)}input[type=range]{width:100%;accent-color:v
 .field{background:#0b1220;border:1px solid #263248;border-radius:15px;padding:12px}
 .field label{display:flex;justify-content:space-between;gap:8px}.field input{border:0;background:transparent;padding:3px 0;font-size:20px}
 .row{display:flex;justify-content:space-between;align-items:center;gap:12px}.spacer{height:1px;background:#263248;margin:13px 0}
+.trk-card{background:#1e293b;border:1px solid #334155;border-radius:16px;padding:18px;color:#f8fafc}
+.trk-header{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
+.trk-header h2{font-size:1rem;font-weight:700;margin:0;color:#38bdf8}
+.trk-sub,.trk-box-sub{font-size:.72rem;color:#94a3b8;display:block;margin-top:3px}
+.trk-btn-reset{background:transparent;border:1px solid #ef4444;color:#f87171;font-size:.75rem;padding:7px 10px;border-radius:8px;cursor:pointer}
+.trk-resumo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.trk-box{background:#0f172a;border:1px solid #334155;border-radius:12px;padding:12px;min-width:0}
+.trk-box-label{font-size:.75rem;color:#94a3b8;display:block;margin-bottom:4px}
+.trk-box-val{font-size:1.15rem;font-weight:700;display:block}
+.trk-gas{color:#fbbf24}.trk-ele{color:#34d399}
+.trk-total-geral{background:#0f172a;border-radius:10px;padding:10px 12px;font-size:.82rem;color:#cbd5e1;display:flex;justify-content:space-between;gap:8px;margin-bottom:16px}
+.trk-form-grid{display:grid;grid-template-columns:1.1fr .9fr 1fr;gap:8px;margin-bottom:10px}
+.trk-input{width:100%;min-width:0;box-sizing:border-box;background:#0f172a;border:1px solid #475569;color:#f8fafc;padding:10px 8px;border-radius:10px;font-size:.88rem}
+.trk-btn-add{width:100%;background:#0284c7;color:#fff;border:0;padding:11px;border-radius:10px;font-weight:700;font-size:.9rem;cursor:pointer}
+.trk-btn-add:disabled{opacity:.55;cursor:not-allowed}.trk-btn-add.editando{background:#d97706}
+.trk-ultimo-linha{margin-top:12px;background:#0f172a;border:1px dashed #475569;border-radius:10px;padding:9px 10px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:.76rem}
+.trk-ultimo-texto{min-width:0;overflow-wrap:anywhere;color:#e2e8f0}
+.trk-btn-edit{background:#334155;color:#38bdf8;border:0;padding:6px 9px;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;flex-shrink:0}
+.trk-arquivo{margin-top:8px;padding:10px;background:#0f172a;border:1px solid #334155;border-radius:10px;color:#e2e8f0;font-size:.78rem}
+.trk-arquivo summary{cursor:pointer;line-height:1.5}
 /* Ajuste responsivo: no iPhone, manter todos os blocos dentro da largura da tela */
 html,body{width:100%;max-width:100%;overflow-x:hidden}
 main,.panel,.cols,.hero-grid,.two,.fields,.field,.input-wrap{min-width:0;max-width:100%}
@@ -184,6 +73,7 @@ main{width:100%}
  .presets{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
 @media(max-width:390px){header{padding:10px 12px;gap:7px}.brand{min-width:0;gap:8px}h1{font-size:14px}header p{font-size:10px}main{padding:11px}.panel{padding:14px}.presets button{font-size:10px}.card{padding:10px}.card strong{font-size:21px}}
+@media(max-width:430px){.trk-form-grid{grid-template-columns:1fr 1fr}.trk-form-grid select{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -251,79 +141,32 @@ main{width:100%}
   <div class="field"><span class="small"><b>Como funciona?</b><br>Compara o custo por km da gasolina (R$/L ÷ km/L) com o consumo elétrico (kWh/km), considerando a perda de recarga.</span></div>
  </div>
 </section>
-<footer class="small" style="text-align:center">Haval H6 PHEV19 • Simulador de eficiência energética</footer>
-<!-- SEÇÃO DE CONTROLE MENSAL -->
-<div class="trk-card">
-  <div class="trk-header">
-    <h2>Controle do Mês</h2>
-    <button type="button" class="trk-btn-reset" onclick="zerarMes()">Zerar Mês</button>
-  </div>
-
-  <!-- Totais em R$ -->
-  <div class="trk-resumo-grid">
-    <div class="trk-box">
-      <span class="trk-box-label">⛽ Gasolina</span>
-      <span class="trk-box-val trk-gas" id="trk-total-gas">R$ 0,00</span>
-      <span class="trk-box-sub" id="trk-qtd-gas">0,0 L acumulados</span>
-    </div>
-    <div class="trk-box">
-      <span class="trk-box-label">⚡ Eletricidade</span>
-      <span class="trk-box-val trk-ele" id="trk-total-ele">R$ 0,00</span>
-      <span class="trk-box-sub" id="trk-qtd-ele">0,0 kWh acumulados</span>
-    </div>
-  </div>
-
-  <div class="trk-total-geral">
-    <span>Total gasto no período:</span>
-    <strong id="trk-total-geral">R$ 0,00</strong>
-  </div>
-
-  <!-- Formulário de Lançamento -->
-  <div class="trk-form-grid">
-    <select id="trk-tipo" class="trk-input" onchange="atualizarPlaceholderQtd()">
-      <option value="gasolina">Gasolina</option>
-      <option value="eletricidade">Elétrico</option>
-    </select>
-    <input type="text" inputmode="decimal" id="trk-qtd" class="trk-input" placeholder="Litros (L)">
-    <input type="text" inputmode="decimal" id="trk-valor" class="trk-input" placeholder="Valor (R$)">
-  </div>
-
-  <button type="button" id="trk-btn-salvar" class="trk-btn-add" onclick="salvarAbastecimento()">
-    Registrar Abastecimento
-  </button>
-
-  <!-- Último Registro em 1 única linha -->
-  <div class="trk-ultimo-linha" id="trk-ultimo-container">
-    <span class="trk-ultimo-texto" id="trk-ultimo-texto">Nenhum registro no mês atual.</span>
-    <button type="button" class="trk-btn-edit" id="trk-btn-edit" style="display:none;" onclick="prepararEdicao()">
-      Editar
-    </button>
-  </div>
-</div>
+<section class="trk-card" aria-labelledby="trk-heading">
+ <div class="trk-header">
+  <div><h2 id="trk-heading">Controle mensal</h2><span class="trk-sub" id="trk-mes-atual"></span></div>
+  <button type="button" class="trk-btn-reset" onclick="zerarMes()">Encerrar mês</button>
+ </div>
+ <div class="trk-resumo-grid">
+  <div class="trk-box"><span class="trk-box-label">⛽ Gasolina</span><strong class="trk-box-val trk-gas" id="trk-total-gas">R$ 0,00</strong><span class="trk-box-sub" id="trk-qtd-gas">0 L acumulados</span></div>
+  <div class="trk-box"><span class="trk-box-label">⚡ Eletricidade</span><strong class="trk-box-val trk-ele" id="trk-total-ele">R$ 0,00</strong><span class="trk-box-sub" id="trk-qtd-ele">0 kWh acumulados</span></div>
+ </div>
+ <div class="trk-total-geral"><span>Total gasto no período:</span><strong id="trk-total-geral-valor">R$ 0,00</strong></div>
+ <div class="trk-form-grid">
+  <select id="trk-tipo" class="trk-input" onchange="atualizarPlaceholderQtd()"><option value="gasolina">Gasolina</option><option value="eletricidade">Elétrico</option></select>
+  <input type="text" inputmode="decimal" id="trk-qtd" class="trk-input" placeholder="Litros (L)" aria-label="Quantidade">
+  <input type="text" inputmode="decimal" id="trk-valor" class="trk-input" placeholder="Valor (R$)" aria-label="Valor pago">
+ </div>
+ <button type="button" id="trk-btn-salvar" class="trk-btn-add" onclick="salvarAbastecimento()">Registrar abastecimento</button>
+ <div id="trk-ultimo-container"></div>
+ <button type="button" class="trk-btn-edit" id="trk-btn-cancelar" style="display:none;margin-top:8px" onclick="cancelarEdicao()">Cancelar edição</button>
+ <p class="trk-box-sub" id="trk-status" aria-live="polite">Os registros ficam salvos neste dispositivo.</p>
+ <div id="trk-historico"></div>
+</section>
 </main>
 <script>
 const $=id=>document.getElementById(id);
 const defaults={rate:2.2,loss:0,gasPrice:6.6,gasCons:13,evCons:15,battery:19,tank:55,monthly:1000};
 const ids=Object.keys(defaults);
-// Banco de registros
-
-function obterRegistros() {
-    return JSON.parse(
-        localStorage.getItem("registros") || "[]"
-    );
-}
-
-function salvarRegistro(registro) {
-
-    const registros = obterRegistros();
-
-    registros.push(registro);
-
-    localStorage.setItem(
-        "registros",
-        JSON.stringify(registros)
-    );
-}
 const brl=n=>Number.isFinite(n)?n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}):'R$ 0,00';
 const num=(n,d=1)=>Number.isFinite(n)?n.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d}):'0';
 function calc(){
@@ -371,150 +214,147 @@ $('reset').addEventListener('click',()=>{Object.entries(defaults).forEach(([k,v]
 restoreSettings();
 calc();
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
-// --- LÓGICA DO CONTROLE MENSAL (LOCALSTORAGE) ---
-const STORAGE_KEY = 'h6_phev19_controle_mensal_v1';
-let modoEdicao = false;
 
-function carregarDadosMes() {
-  const salvo = localStorage.getItem(STORAGE_KEY);
-  if (salvo) {
-    return JSON.parse(salvo);
+// Registro mensal local: os dados ficam neste navegador e não são enviados a um servidor.
+const TRACKER_KEY='h6_phev19_controle_mensal_v1';
+const TIPOS_REGISTRO=['gasolina','eletricidade'];
+let estadoMensal;
+let modoEdicao=false;
+function chaveMes(data=new Date()){return `${data.getFullYear()}-${String(data.getMonth()+1).padStart(2,'0')}`}
+function novoMes(){return {abertura:{gasolina:{valor:0,qtd:0},eletricidade:{valor:0,qtd:0}},registros:[],encerradoEm:null}}
+function nomeMes(chave){const [ano,mes]=chave.split('-').map(Number);return new Date(ano,mes-1,1).toLocaleDateString('pt-BR',{month:'long',year:'numeric'})}
+function proximoMes(chave){const [ano,mes]=chave.split('-').map(Number);return chaveMes(new Date(ano,mes,1))}
+function migrarDadosAntigos(antigo){
+ const mes=novoMes(),ultimo=antigo&&antigo.ultimo;
+ for(const tipo of TIPOS_REGISTRO){
+  const legado=antigo&&antigo[tipo],valor=Number(legado&&legado.valor)||0,qtd=Number(legado&&legado.qtd)||0;
+  const valorUltimo=ultimo&&ultimo.tipo===tipo?Number(ultimo.valor)||0:0,qtdUltimo=ultimo&&ultimo.tipo===tipo?Number(ultimo.qtd)||0:0;
+  mes.abertura[tipo]={valor:Math.max(0,valor-valorUltimo),qtd:Math.max(0,qtd-qtdUltimo)};
+ }
+ if(ultimo&&TIPOS_REGISTRO.includes(ultimo.tipo)&&Number(ultimo.qtd)>0&&Number(ultimo.valor)>0){
+  mes.registros.push({id:`migrado-${Date.now()}`,tipo:ultimo.tipo,qtd:Number(ultimo.qtd),valor:Number(ultimo.valor),criadoEm:new Date().toISOString(),dataLegada:ultimo.data});
+ }
+ const atual=chaveMes();return {versao:2,mesAtivo:atual,meses:{[atual]:mes}};
+}
+function carregarEstado(){
+ const texto=localStorage.getItem(TRACKER_KEY);
+ if(!texto)return {versao:2,mesAtivo:chaveMes(),meses:{}};
+ const salvo=JSON.parse(texto);
+ if(salvo&&salvo.versao===2&&salvo.meses&&typeof salvo.meses==='object'){
+  if(!salvo.meses[salvo.mesAtivo])salvo.meses[salvo.mesAtivo]=novoMes();
+  return salvo;
+ }
+ return migrarDadosAntigos(salvo);
+}
+function mesAtivo(){
+ if(!estadoMensal.meses[estadoMensal.mesAtivo])estadoMensal.meses[estadoMensal.mesAtivo]=novoMes();
+ return estadoMensal.meses[estadoMensal.mesAtivo];
+}
+function persistirEstado(){
+ try{localStorage.setItem(TRACKER_KEY,JSON.stringify(estadoMensal));$('trk-status').textContent='Os registros ficam salvos neste dispositivo.';return true}
+ catch(erro){$('trk-status').textContent='Não foi possível salvar neste dispositivo. Verifique o espaço disponível.';return false}
+}
+function numeroBR(texto){
+ if(!texto)return NaN;
+ const valor=texto.toString().trim().replace(/\s/g,'').replace(/\.(?=\d{3}(?:\D|$))/g,'').replace(',','.');
+ return Number(valor);
+}
+function moedaBR(valor){return Number(valor).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function quantidadeBR(valor){return Number(valor).toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:2})}
+function atualizarPlaceholderQtd(){$('trk-qtd').placeholder=$('trk-tipo').value==='gasolina'?'Litros (L)':'Carga (kWh)'}
+function atualizarModoEdicao(ativo){
+ modoEdicao=ativo;
+ $('trk-btn-salvar').textContent=ativo?'Salvar alteração':'Registrar abastecimento';
+ $('trk-btn-salvar').classList.toggle('editando',ativo);
+ $('trk-btn-cancelar').style.display=ativo?'inline-block':'none';
+}
+function limparFormulario(){$('trk-qtd').value='';$('trk-valor').value='';atualizarModoEdicao(false)}
+function salvarAbastecimento(){
+ const tipo=$('trk-tipo').value,qtd=numeroBR($('trk-qtd').value),valor=numeroBR($('trk-valor').value);
+ if(!TIPOS_REGISTRO.includes(tipo)||!Number.isFinite(qtd)||qtd<=0||!Number.isFinite(valor)||valor<=0){alert('Preencha a quantidade e o valor pago em R$ corretamente.');return}
+ const mes=mesAtivo();
+ if(mes.encerradoEm){alert('Este mês já foi encerrado. Aguarde o próximo mês para registrar abastecimentos.');return}
+ if(modoEdicao&&mes.registros.length){
+  const ultimo=mes.registros[mes.registros.length-1];ultimo.tipo=tipo;ultimo.qtd=qtd;ultimo.valor=valor;
+ }else{
+  mes.registros.push({id:`${Date.now()}-${Math.random().toString(36).slice(2)}`,tipo,qtd,valor,criadoEm:new Date().toISOString()});
+ }
+ limparFormulario();persistirEstado();renderizarControleMes();
+}
+function prepararEdicao(){
+ const registros=mesAtivo().registros;if(!registros.length)return;
+ const ultimo=registros[registros.length-1];
+ $('trk-tipo').value=ultimo.tipo;atualizarPlaceholderQtd();
+ $('trk-qtd').value=String(ultimo.qtd).replace('.',',');
+ $('trk-valor').value=Number(ultimo.valor).toFixed(2).replace('.',',');
+ atualizarModoEdicao(true);$('trk-qtd').focus();
+}
+function cancelarEdicao(){limparFormulario()}
+function zerarMes(){
+ const anterior=estadoMensal.mesAtivo;
+ if(!confirm(`Encerrar ${nomeMes(anterior)} e iniciar ${nomeMes(proximoMes(anterior))}? Os registros serão arquivados neste dispositivo.`))return;
+ mesAtivo().encerradoEm=new Date().toISOString();
+ estadoMensal.mesAtivo=proximoMes(anterior);
+ if(!estadoMensal.meses[estadoMensal.mesAtivo])estadoMensal.meses[estadoMensal.mesAtivo]=novoMes();
+ limparFormulario();persistirEstado();renderizarControleMes();
+}
+function criarLinhaRegistro(registro,editavel){
+ const linha=document.createElement('div');linha.className='trk-ultimo-linha';
+ const texto=document.createElement('span');texto.className='trk-ultimo-texto';
+ const unidade=registro.tipo==='gasolina'?'L':'kWh',tipo=registro.tipo==='gasolina'?'Gasolina':'Elétrico';
+ const data=registro.dataLegada||new Date(registro.criadoEm).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'});
+ texto.textContent=`${data} • ${tipo}: ${quantidadeBR(registro.qtd)} ${unidade} • ${moedaBR(registro.valor)} (${moedaBR(registro.valor/registro.qtd)}/${unidade})`;
+ linha.appendChild(texto);
+ if(editavel){const botao=document.createElement('button');botao.type='button';botao.className='trk-btn-edit';botao.textContent='Editar';botao.onclick=prepararEdicao;linha.appendChild(botao)}
+ return linha;
+}
+function totaisDoMes(mes){
+ const totais={gasolina:{...mes.abertura.gasolina},eletricidade:{...mes.abertura.eletricidade}};
+ for(const registro of mes.registros){totais[registro.tipo].valor+=registro.valor;totais[registro.tipo].qtd+=registro.qtd}
+ return totais;
+}
+function renderizarControleMes(){
+ const mes=mesAtivo(),totais=totaisDoMes(mes);
+ $('trk-mes-atual').textContent=nomeMes(estadoMensal.mesAtivo);
+ $('trk-total-gas').textContent=moedaBR(totais.gasolina.valor);
+ $('trk-qtd-gas').textContent=`${quantidadeBR(totais.gasolina.qtd)} L acumulados`;
+ $('trk-total-ele').textContent=moedaBR(totais.eletricidade.valor);
+ $('trk-qtd-ele').textContent=`${quantidadeBR(totais.eletricidade.qtd)} kWh acumulados`;
+ $('trk-total-geral-valor').textContent=moedaBR(totais.gasolina.valor+totais.eletricidade.valor);
+ const container=$('trk-ultimo-container'),registros=mes.registros,ultimo=registros[registros.length-1];
+ container.replaceChildren();
+ if(ultimo)container.appendChild(criarLinhaRegistro(ultimo,!mes.encerradoEm));
+ else{const texto=document.createElement('span');texto.className='trk-ultimo-texto';texto.textContent='Nenhum registro neste mês.';container.appendChild(texto)}
+ $('trk-btn-salvar').disabled=Boolean(mes.encerradoEm);
+ $('trk-btn-salvar').title=mes.encerradoEm?'Este mês foi encerrado.':'';
+ const historico=$('trk-historico');historico.replaceChildren();
+ if(registros.length>1){
+  const titulo=document.createElement('h3');titulo.textContent='Registros deste mês';historico.appendChild(titulo);
+  for(const registro of registros.slice(0,-1).reverse())historico.appendChild(criarLinhaRegistro(registro,false));
+ }
+ const arquivados=Object.keys(estadoMensal.meses).filter(chave=>chave!==estadoMensal.mesAtivo).sort((a,b)=>b.localeCompare(a));
+ if(arquivados.length){
+  const titulo=document.createElement('h3');titulo.textContent='Meses arquivados';historico.appendChild(titulo);
+  for(const chave of arquivados){
+   const arquivo=estadoMensal.meses[chave],resumo=totaisDoMes(arquivo);
+   const detalhes=document.createElement('details');detalhes.className='trk-arquivo';
+   const cabecalho=document.createElement('summary');
+   cabecalho.textContent=`${nomeMes(chave)} • Gasolina ${moedaBR(resumo.gasolina.valor)} • Elétrico ${moedaBR(resumo.eletricidade.valor)} • ${arquivo.registros.length} registro(s)`;
+   detalhes.appendChild(cabecalho);
+   for(const registro of [...arquivo.registros].reverse())detalhes.appendChild(criarLinhaRegistro(registro,false));
+   historico.appendChild(detalhes);
   }
-  return {
-    gasolina: { valor: 0, qtd: 0 },
-    eletricidade: { valor: 0, qtd: 0 },
-    ultimo: null
-  };
+ }
 }
-
-function salvarDadosMes(dados) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(dados));
-  renderizarControleMes();
+estadoMensal=carregarEstado();
+const mesCalendario=chaveMes();
+if(estadoMensal.mesAtivo<mesCalendario){
+ const anterior=estadoMensal.meses[estadoMensal.mesAtivo];
+ if(anterior&&!anterior.encerradoEm)anterior.encerradoEm=new Date().toISOString();
+ estadoMensal.mesAtivo=mesCalendario;
+ if(!estadoMensal.meses[mesCalendario])estadoMensal.meses[mesCalendario]=novoMes();
+ persistirEstado();
 }
-
-function parseNumeroBR(str) {
-  if (!str) return NaN;
-  return parseFloat(str.toString().trim().replace(',', '.'));
-}
-
-function formatarMoeda(valor) {
-  return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-}
-
-function atualizarPlaceholderQtd() {
-  const tipo = document.getElementById('trk-tipo').value;
-  const inputQtd = document.getElementById('trk-qtd');
-  inputQtd.placeholder = tipo === 'gasolina' ? 'Litros (L)' : 'Carga (kWh)';
-}
-
-function salvarAbastecimento() {
-  const tipo = document.getElementById('trk-tipo').value;
-  const qtd = parseNumeroBR(document.getElementById('trk-qtd').value);
-  const valor = parseNumeroBR(document.getElementById('trk-valor').value);
-
-  if (isNaN(qtd) || qtd <= 0 || isNaN(valor) || valor <= 0) {
-    alert('Preencha a quantidade e o valor pago em R$ corretamente.');
-    return;
-  }
-
-  const dados = carregarDadosMes();
-
-  // Se estiver editando o último lançamento, estorna o valor anterior antes de somar o novo
-  if (modoEdicao && dados.ultimo) {
-    const ant = dados.ultimo;
-    dados[ant.tipo].valor = Math.max(0, Math.round((dados[ant.tipo].valor - ant.valor) * 100) / 100);
-    dados[ant.tipo].qtd = Math.max(0, Math.round((dados[ant.tipo].qtd - ant.qtd) * 100) / 100);
-  }
-
-  // Soma o novo lançamento
-  dados[tipo].valor = Math.round((dados[tipo].valor + valor) * 100) / 100;
-  dados[tipo].qtd = Math.round((dados[tipo].qtd + qtd) * 100) / 100;
-
-  const hoje = new Date();
-  const dataCurta = String(hoje.getDate()).padStart(2, '0') + '/' + String(hoje.getMonth() + 1).padStart(2, '0');
-
-  dados.ultimo = {
-    tipo: tipo,
-    qtd: qtd,
-    valor: valor,
-    data: dataCurta
-  };
-
-  // Limpa campos e sai do modo edição
-  document.getElementById('trk-qtd').value = '';
-  document.getElementById('trk-valor').value = '';
-  modoEdicao = false;
-  const btn = document.getElementById('trk-btn-salvar');
-  btn.textContent = 'Registrar Abastecimento';
-  btn.classList.remove('editando');
-
-  salvarDadosMes(dados);
-}
-
-function prepararEdicao() {
-  const dados = carregarDadosMes();
-  if (!dados.ultimo) return;
-
-  const u = dados.ultimo;
-  document.getElementById('trk-tipo').value = u.tipo;
-  atualizarPlaceholderQtd();
-  document.getElementById('trk-qtd').value = u.qtd.toString().replace('.', ',');
-  document.getElementById('trk-valor').value = u.valor.toFixed(2).replace('.', ',');
-
-  modoEdicao = true;
-  const btn = document.getElementById('trk-btn-salvar');
-  btn.textContent = 'Salvar Alteração';
-  btn.classList.add('editando');
-  document.getElementById('trk-qtd').focus();
-}
-
-function zerarMes() {
-  if (!confirm('Deseja encerrar o período e zerar os gastos de gasolina e eletricidade deste mês?')) {
-    return;
-  }
-  modoEdicao = false;
-  const btn = document.getElementById('trk-btn-salvar');
-  btn.textContent = 'Registrar Abastecimento';
-  btn.classList.remove('editando');
-
-  salvarDadosMes({
-    gasolina: { valor: 0, qtd: 0 },
-    eletricidade: { valor: 0, qtd: 0 },
-    ultimo: null
-  });
-}
-
-function renderizarControleMes() {
-  const dados = carregarDadosMes();
-
-  document.getElementById('trk-total-gas').textContent = formatarMoeda(dados.gasolina.valor);
-  document.getElementById('trk-qtd-gas').textContent = `${dados.gasolina.qtd.toFixed(1).replace('.', ',')} L acumulados`;
-
-  document.getElementById('trk-total-ele').textContent = formatarMoeda(dados.eletricidade.valor);
-  document.getElementById('trk-qtd-ele').textContent = `${dados.eletricidade.qtd.toFixed(1).replace('.', ',')} kWh acumulados`;
-
-  const totalGeral = dados.gasolina.valor + dados.eletricidade.valor;
-  document.getElementById('trk-total-geral').textContent = formatarMoeda(totalGeral);
-
-  const textoUltimo = document.getElementById('trk-ultimo-texto');
-  const btnEdit = document.getElementById('trk-btn-edit');
-
-  if (dados.ultimo) {
-    const u = dados.ultimo;
-    const nomeTipo = u.tipo === 'gasolina' ? 'Gas' : 'Elét';
-    const un = u.tipo === 'gasolina' ? 'L' : 'kWh';
-    const unitario = (u.valor / u.qtd).toFixed(2).replace('.', ',');
-    const qtdFmt = u.qtd.toFixed(1).replace('.', ',');
-
-    textoUltimo.textContent = `${u.data} • ${nomeTipo}: ${qtdFmt}${un} • ${formatarMoeda(u.valor)} (R$ ${unitario}/${un})`;
-    btnEdit.style.display = 'inline-block';
-  } else {
-    textoUltimo.textContent = 'Nenhum registro no mês atual.';
-    btnEdit.style.display = 'none';
-  }
-}
-
-// Inicializa os valores salvos ao abrir o app
 renderizarControleMes();
 </script>
 </body></html>
