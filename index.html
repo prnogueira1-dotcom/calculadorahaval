@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#090d16">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="H6 PHEV19">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>HAVAL H6 PHEV19</title>
+</style>
+/* --- CONTROLE MENSAL DE ABASTECIMENTOS --- */
+.trk-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 18px;
+  margin-top: 20px;
+  color: #f8fafc;
+}
+.trk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.trk-header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #38bdf8;
+}
+.trk-btn-reset {
+  background: transparent;
+  border: 1px solid #ef4444;
+  color: #f87171;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.trk-resumo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.trk-box {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 12px;
+}
+.trk-box-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 4px;
+}
+.trk-box-val {
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: block;
+}
+.trk-gas { color: #fbbf24; }
+.trk-ele { color: #34d399; }
+.trk-box-sub {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-top: 2px;
+  display: block;
+}
+.trk-total-geral {
+  background: #0f172a;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.trk-form-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 1fr;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.trk-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #0f172a;
+  border: 1px solid #475569;
+  color: #f8fafc;
+  padding: 10px 8px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+}
+.trk-btn-add {
+  width: 100%;
+  background: #0284c7;
+  color: #fff;
+  border: none;
+  padding: 11px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.trk-btn-add.editando {
+  background: #d97706;
+}
+.trk-ultimo-linha {
+  margin-top: 12px;
+  background: #0f172a;
+  border: 1px dashed #475569;
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.76rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.trk-ultimo-texto {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #e2e8f0;
+}
+.trk-btn-edit {
+  background: #334155;
+  color: #38bdf8;
+  border: none;
+  padding: 4px 9px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+:root{color-scheme:dark;--bg:#090d16;--card:#111827;--surface:#1a2333;--border:#263248;--cyan:#06b6d4;--green:#10b981;--rose:#f43f5e;--muted:#94a3b8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f8fafc;font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:35px;-webkit-tap-highlight-color:transparent}
+header{position:sticky;top:0;z-index:5;background:#090d16ed;backdrop-filter:blur(14px);border-bottom:1px solid #263248;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:10px}.logo{width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,#06b6d4,#2563eb);display:grid;place-items:center;font-size:22px}
+h1{font-size:16px;margin:0;font-weight:800}header p{margin:3px 0 0;color:var(--muted);font-size:11px}
+button{border:1px solid #334155;background:#1e293b;color:#e2e8f0;border-radius:11px;padding:9px 11px;font-weight:650;font-size:12px}
+main{max-width:900px;margin:auto;padding:16px;display:grid;gap:15px}
+.panel{background:linear-gradient(145deg,#161f30e8,#0d131ff2);border:1px solid #38496670;border-radius:22px;padding:17px;box-shadow:0 12px 35px #0002}
+.hero{border-color:#0891b255;box-shadow:0 0 30px -8px #06b6d440}
+.kicker{display:inline-block;color:#67e8f9;background:#06b6d420;border:1px solid #06b6d44d;border-radius:30px;padding:5px 9px;font-size:10px;font-weight:800;letter-spacing:.08em}
+h2,h3{margin:9px 0;color:#e2e8f0}h2{font-size:14px;font-weight:600}.big{font-size:clamp(38px,10vw,58px);font-weight:850;letter-spacing:-2px;margin:8px 0}.muted{color:var(--muted)}.small{font-size:11px;color:var(--muted);line-height:1.5}
+.hero-grid,.two,.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{background:#0b1220;border:1px solid #263248;border-radius:16px;padding:12px}.mini b{display:block;font-size:19px;margin:5px 0}
+.section-title{font-size:15px;font-weight:800;border-bottom:1px solid #263248;padding-bottom:12px;margin:0 0 14px}
+label{display:block;font-size:12px;color:#cbd5e1;margin-bottom:7px}
+input[type=number]{width:100%;min-width:0;background:#080e19;border:1px solid #334155;border-radius:12px;padding:12px;color:white;font-size:20px;font-weight:750;outline:none}
+input:focus{border-color:var(--cyan)}input[type=range]{width:100%;accent-color:var(--cyan)}
+.input-wrap{display:flex;align-items:center;gap:8px}.input-wrap span{color:#94a3b8;font-weight:700}
+.presets{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:10px}.presets button{padding:9px 2px}.presets small{display:block;color:#94a3b8;font-size:9px;font-weight:500;margin-top:3px}
+.card{background:#0b1220;border:1px solid #263248;border-radius:16px;padding:13px}.card.ev{border-color:#10b98155;background:#05251f66}.card.gas{border-color:#92400e55}
+.card strong{font-size:25px;display:block;margin:7px 0}.green{color:#34d399}.cyan{color:#67e8f9}.amber{color:#fbbf24}.red{color:#fb7185}
+.status{display:inline-block;padding:6px 10px;border-radius:20px;font-size:11px;font-weight:800;background:#064e3b88;color:#6ee7b7}
+.status.bad{background:#88133788;color:#fda4af}
+.bar{height:9px;background:#1e293b;border-radius:30px;overflow:hidden;margin:6px 0 13px}.fill{height:100%;border-radius:30px;background:#34d399}
+.result{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#080e19;border:1px solid #263248;border-radius:13px;padding:12px;margin-top:12px;font-size:12px}
+.field{background:#0b1220;border:1px solid #263248;border-radius:15px;padding:12px}
+.field label{display:flex;justify-content:space-between;gap:8px}.field input{border:0;background:transparent;padding:3px 0;font-size:20px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px}.spacer{height:1px;background:#263248;margin:13px 0}
+/* Ajuste responsivo: no iPhone, manter todos os blocos dentro da largura da tela */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+main,.panel,.cols,.hero-grid,.two,.fields,.field,.input-wrap{min-width:0;max-width:100%}
+main{width:100%}
+.cols{display:grid;grid-template-columns:minmax(0,1fr);gap:15px}
+.hero-grid,.two,.fields{grid-template-columns:minmax(0,1fr)}
+.presets{grid-template-columns:repeat(2,minmax(0,1fr))}
+.input-wrap input{flex:1;width:1%;min-width:0}
+@media(min-width:850px){
+ .cols{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr)}
+ .hero-grid{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}
+ .fields{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .presets{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:390px){header{padding:10px 12px;gap:7px}.brand{min-width:0;gap:8px}h1{font-size:14px}header p{font-size:10px}main{padding:11px}.panel{padding:14px}.presets button{font-size:10px}.card{padding:10px}.card strong{font-size:21px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><div class="logo">ϟ</div><div><h1>GWM Haval H6 <span class="cyan">PHEV19</span></h1><p>Calculadora de equilíbrio e custo/km</p></div></div>
+ <button id="reset">↺ Restaurar</button>
+</header>
+<main>
+<section class="panel hero">
+ <div class="hero-grid">
+  <div><span class="kicker">⚖ TETO MÁXIMO NO ELETROPOSTO</span><h2>Valor máximo do kWh para empatar com a gasolina:</h2>
+   <div class="big" id="breakEven">R$ 3,38</div><div class="muted">/ kWh</div>
+   <p class="small" id="breakText"></p>
+  </div>
+  <div class="mini"><span class="small">AUTONOMIA ELÉTRICA</span><b id="evRange" class="cyan">126,7 km</b><span class="small">Bateria <span id="batTag">19</span> kWh</span>
+   <div class="spacer"></div><span class="small">AUTONOMIA TOTAL EST.</span><b id="totalRange">841,7 km</b><span class="small">Tanque + bateria</span>
+  </div>
+ </div>
+</section>
+<div class="cols">
+<section class="panel">
+ <div class="row"><h3>🔌 Tarifa do eletroposto</h3><span class="small">Simulação atual</span></div>
+ <label for="rate">Preço por kWh</label><div class="input-wrap"><span>R$</span><input id="rate" type="number" step=".05" min="0" value="2.20"><span>/kWh</span></div>
+ <p class="small">Atalhos rápidos</p><div class="presets">
+ <button data-rate="1">R$ 1,00<small>Casa</small></button><button data-rate="1.9">R$ 1,90<small>AC lento</small></button><button data-rate="2.5">R$ 2,50<small>DC rápido</small></button><button data-rate="3">R$ 3,00<small>DC ultra</small></button>
+ </div>
+ <div class="spacer"></div><div class="row"><label>Perda na recarga</label><span class="small" id="lossLabel">0%</span></div>
+ <input id="loss" type="range" min="0" max="20" step="1" value="0">
+ <div class="row"><button data-loss="0">0%</button><button data-loss="10">10%</button><input id="lossNum" type="number" min="0" max="50" value="0" style="width:78px;font-size:15px;padding:7px">%</div>
+ <p class="small">Ajuste para incluir a energia dissipada em calor durante a recarga.</p>
+</section>
+<section class="panel">
+ <div class="row"><h3>📊 Custo por quilômetro</h3><span id="status" class="status">Economia</span></div>
+ <div class="two">
+  <div class="card ev"><span class="green">Modo elétrico</span><strong id="evCost">R$ 0,33</strong><span class="small">/km</span><p class="small" id="evSummary"></p></div>
+  <div class="card gas"><span class="amber">Modo gasolina</span><strong id="gasCost">R$ 0,51</strong><span class="small">/km</span><p class="small" id="gasSummary"></p></div>
+ </div>
+ <div class="card" style="margin-top:12px"><div class="row small"><span>Elétrico</span><b id="evBarLabel" class="green"></b></div><div class="bar"><div id="evBar" class="fill"></div></div>
+ <div class="row small"><span>Gasolina</span><b id="gasBarLabel" class="amber"></b></div><div class="bar"><div id="gasBar" class="fill" style="background:#fbbf24"></div></div></div>
+ <div class="result"><span>Diferença por km:</span><b id="diff" class="green"></b></div>
+</section>
+</div>
+<section class="panel">
+ <h3 class="section-title">🔋 Carga completa e impacto mensal</h3>
+ <div class="two">
+  <div class="card"><span class="cyan small">RECARGA COMPLETA (0% → 100%)</span><p class="small">Para rodar <b id="chargeRange"></b>:</p>
+   <div class="two"><div class="mini"><span class="small">Encher bateria</span><b id="chargeCost"></b><span class="small" id="billed"></span></div><div class="mini"><span class="small">Mesma distância na gasolina</span><b id="chargeGas" class="amber"></b><span class="small" id="liters"></span></div></div>
+   <div class="result"><span>Saldo por carga:</span><b id="chargeSaving" class="green"></b></div>
+  </div>
+  <div class="card"><span class="cyan small">PROJEÇÃO MENSAL NO ELÉTRICO</span><div class="row"><label>Quilômetros por mês</label><b id="kmMonth">1.000 km</b></div>
+   <input id="monthly" type="range" min="100" max="4000" step="50" value="1000">
+   <div class="row small"><span>100 km</span><span>4.000 km</span></div>
+   <div class="result"><div><span class="small" id="monthLabel">Economia mensal estimada</span><b id="monthValue" class="green" style="display:block;font-size:25px"></b></div><div style="text-align:right"><span class="small">Em 1 ano</span><b id="yearValue" style="display:block"></b></div></div>
+  </div>
+ </div>
+</section>
+<section class="panel">
+ <h3 class="section-title">⚙ Parâmetros do veículo e combustível</h3>
+ <div class="fields">
+  <div class="field"><label>Preço da gasolina <span class="amber">R$/L</span></label><div class="input-wrap"><span>R$</span><input id="gasPrice" type="number" step=".01" value="6.60"></div></div>
+  <div class="field"><label>Consumo na gasolina <span class="amber">km/L</span></label><div class="input-wrap"><input id="gasCons" type="number" step=".1" value="13"><span>km/L</span></div></div>
+  <div class="field"><label>Consumo elétrico <span class="cyan" id="kmKwh">6,67 km/kWh</span></label><div class="input-wrap"><input id="evCons" type="number" step=".1" value="15"><span>kWh/100km</span></div></div>
+  <div class="field"><label>Capacidade da bateria <span class="cyan">kWh</span></label><div class="input-wrap"><input id="battery" type="number" step=".5" value="19"><span>kWh</span></div></div>
+  <div class="field"><label>Capacidade do tanque <span>Litros</span></label><div class="input-wrap"><input id="tank" type="number" step="1" value="55"><span>L</span></div></div>
+  <div class="field"><span class="small"><b>Como funciona?</b><br>Compara o custo por km da gasolina (R$/L ÷ km/L) com o consumo elétrico (kWh/km), considerando a perda de recarga.</span></div>
+ </div>
+</section>
+<footer class="small" style="text-align:center">Haval H6 PHEV19 • Simulador de eficiência energética</footer>
+<!-- SEÇÃO DE CONTROLE MENSAL -->
+<div class="trk-card">
+  <div class="trk-header">
+    <h2>Controle do Mês</h2>
+    <button type="button" class="trk-btn-reset" onclick="zerarMes()">Zerar Mês</button>
+  </div>
+
+  <!-- Totais em R$ -->
+  <div class="trk-resumo-grid">
+    <div class="trk-box">
+      <span class="trk-box-label">⛽ Gasolina</span>
+      <span class="trk-box-val trk-gas" id="trk-total-gas">R$ 0,00</span>
+      <span class="trk-box-sub" id="trk-qtd-gas">0,0 L acumulados</span>
+    </div>
+    <div class="trk-box">
+      <span class="trk-box-label">⚡ Eletricidade</span>
+      <span class="trk-box-val trk-ele" id="trk-total-ele">R$ 0,00</span>
+      <span class="trk-box-sub" id="trk-qtd-ele">0,0 kWh acumulados</span>
+    </div>
+  </div>
+
+  <div class="trk-total-geral">
+    <span>Total gasto no período:</span>
+    <strong id="trk-total-geral">R$ 0,00</strong>
+  </div>
+
+  <!-- Formulário de Lançamento -->
+  <div class="trk-form-grid">
+    <select id="trk-tipo" class="trk-input" onchange="atualizarPlaceholderQtd()">
+      <option value="gasolina">Gasolina</option>
+      <option value="eletricidade">Elétrico</option>
+    </select>
+    <input type="text" inputmode="decimal" id="trk-qtd" class="trk-input" placeholder="Litros (L)">
+    <input type="text" inputmode="decimal" id="trk-valor" class="trk-input" placeholder="Valor (R$)">
+  </div>
+
+  <button type="button" id="trk-btn-salvar" class="trk-btn-add" onclick="salvarAbastecimento()">
+    Registrar Abastecimento
+  </button>
+
+  <!-- Último Registro em 1 única linha -->
+  <div class="trk-ultimo-linha" id="trk-ultimo-container">
+    <span class="trk-ultimo-texto" id="trk-ultimo-texto">Nenhum registro no mês atual.</span>
+    <button type="button" class="trk-btn-edit" id="trk-btn-edit" style="display:none;" onclick="prepararEdicao()">
+      Editar
+    </button>
+  </div>
+</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const defaults={rate:2.2,loss:0,gasPrice:6.6,gasCons:13,evCons:15,battery:19,tank:55,monthly:1000};
+const ids=Object.keys(defaults);
+// Banco de registros
+
+function obterRegistros() {
+    return JSON.parse(
+        localStorage.getItem("registros") || "[]"
+    );
+}
+
+function salvarRegistro(registro) {
+
+    const registros = obterRegistros();
+
+    registros.push(registro);
+
+    localStorage.setItem(
+        "registros",
+        JSON.stringify(registros)
+    );
+}
+const brl=n=>Number.isFinite(n)?n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}):'R$ 0,00';
+const num=(n,d=1)=>Number.isFinite(n)?n.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d}):'0';
+function calc(){
+ const rate=Math.max(0,parseFloat($('rate').value)||0),loss=Math.max(0,Math.min(90,parseFloat($('lossNum').value)||0));
+ const gp=Math.max(.01,parseFloat($('gasPrice').value)||.01),gc=Math.max(.1,parseFloat($('gasCons').value)||.1);
+ const ec=Math.max(.1,parseFloat($('evCons').value)||.1),bat=Math.max(1,parseFloat($('battery').value)||1),tank=Math.max(1,parseFloat($('tank').value)||1),km=+$('monthly').value;
+ const mult=1+loss/100,kmk=100/ec,kwhkm=ec/100*mult,gas=gp/gc,ev=kwhkm*rate,be=gas/kwhkm;
+ const range=bat*kmk,total=range+tank*gc,fullk=bat*mult,fullcost=fullk*rate,liters=range/gc,gasfull=liters*gp,diff=gas-ev,month=diff*km;
+ $('breakEven').textContent=brl(be);$('breakText').innerHTML=`Qualquer recarga abaixo de <b class="cyan">${brl(be)}/kWh</b> gera economia frente à gasolina a ${brl(gp)}/L${loss?' (considerando '+loss+'% de perda)':''}.`;
+ $('evRange').textContent=num(range)+' km';$('totalRange').textContent=num(total)+' km';$('batTag').textContent=num(bat,bat%1?1:0);
+ $('evCost').textContent=brl(ev);$('gasCost').textContent=brl(gas);$('evSummary').textContent=`${num(ec)} kWh/100km (${num(kmk,2)} km/kWh)`;$('gasSummary').textContent=`${num(gc)} km/L a ${brl(gp)}/L`;
+ const max=Math.max(ev,gas,.01),ep=ev/max*100,gpbar=gas/max*100;$('evBar').style.width=ep+'%';$('gasBar').style.width=gpbar+'%';$('evBarLabel').textContent=brl(ev)+'/km';$('gasBarLabel').textContent=brl(gas)+'/km';
+ $('status').textContent=diff>=0?`Economia de ${num(gas?diff/gas*100:0)}%`:`${num(Math.abs(diff)/gas*100)}% mais caro`;$('status').classList.toggle('bad',diff<0);
+ $('diff').textContent=diff>=0?`− ${brl(diff)} / km (elétrico mais barato)`:`+ ${brl(-diff)} / km (gasolina compensa)`;$('diff').className=diff>=0?'green':'red';
+ $('chargeRange').textContent=num(range)+' km';$('chargeCost').textContent=brl(fullcost);$('billed').textContent=num(fullk)+' kWh cobrados';$('chargeGas').textContent=brl(gasfull);$('liters').textContent='~'+num(liters,2)+' litros';
+ $('chargeSaving').textContent=(gasfull-fullcost>=0?'+ ':'− ')+brl(Math.abs(gasfull-fullcost))+(gasfull-fullcost>=0?' economia':' custo extra');$('chargeSaving').className=gasfull-fullcost>=0?'green':'red';
+ $('kmMonth').textContent=km.toLocaleString('pt-BR')+' km';$('monthLabel').textContent=month>=0?'Economia mensal estimada':'Custo extra mensal estimado';$('monthValue').textContent=(month<0?'+ ':'')+brl(Math.abs(month));$('monthValue').className=month>=0?'green':'red';$('yearValue').textContent=(month<0?'+ ':'')+brl(Math.abs(month*12));
+ $('kmKwh').textContent=num(kmk,2)+' km/kWh';$('lossLabel').textContent=loss+'%';$('loss').value=Math.min(20,loss);
+}
+function saveSettings(){
+ const data={};
+ ids.forEach(k=>data[k]=$(k).value);
+ // Guarda também o valor exato digitado para a perda de recarga.
+ data.lossNum=$('lossNum').value;
+ try{localStorage.setItem('h6-phev19-settings',JSON.stringify(data))}catch(e){}
+}
+function restoreSettings(){
+ try{
+  const saved=localStorage.getItem('h6-phev19-settings');
+  if(!saved)return;
+  const data=JSON.parse(saved);
+  ids.forEach(k=>{if(data[k]!==undefined)$(k).value=data[k]});
+  if(data.lossNum!==undefined)$('lossNum').value=data.lossNum;
+ }catch(e){}
+}
+ids.forEach(id=>$(id).addEventListener('input',()=>{
+ if(id==='loss')$('lossNum').value=$('loss').value;
+ calc();saveSettings();
+}));
+$('lossNum').addEventListener('input',()=>{calc();saveSettings()});
+$('monthly').addEventListener('input',()=>{calc();saveSettings()});
+document.querySelectorAll('[data-rate]').forEach(b=>b.addEventListener('click',()=>{$('rate').value=b.dataset.rate;calc();saveSettings()}));
+document.querySelectorAll('[data-loss]').forEach(b=>b.addEventListener('click',()=>{$('lossNum').value=b.dataset.loss;calc();saveSettings()}));
+$('reset').addEventListener('click',()=>{Object.entries(defaults).forEach(([k,v])=>$(k).value=v);$('lossNum').value=defaults.loss;calc();saveSettings()});
+restoreSettings();
+calc();
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+// --- LÓGICA DO CONTROLE MENSAL (LOCALSTORAGE) ---
+const STORAGE_KEY = 'h6_phev19_controle_mensal_v1';
+let modoEdicao = false;
+
+function carregarDadosMes() {
+  const salvo = localStorage.getItem(STORAGE_KEY);
+  if (salvo) {
+    return JSON.parse(salvo);
+  }
+  return {
+    gasolina: { valor: 0, qtd: 0 },
+    eletricidade: { valor: 0, qtd: 0 },
+    ultimo: null
+  };
+}
+
+function salvarDadosMes(dados) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(dados));
+  renderizarControleMes();
+}
+
+function parseNumeroBR(str) {
+  if (!str) return NaN;
+  return parseFloat(str.toString().trim().replace(',', '.'));
+}
+
+function formatarMoeda(valor) {
+  return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+function atualizarPlaceholderQtd() {
+  const tipo = document.getElementById('trk-tipo').value;
+  const inputQtd = document.getElementById('trk-qtd');
+  inputQtd.placeholder = tipo === 'gasolina' ? 'Litros (L)' : 'Carga (kWh)';
+}
+
+function salvarAbastecimento() {
+  const tipo = document.getElementById('trk-tipo').value;
+  const qtd = parseNumeroBR(document.getElementById('trk-qtd').value);
+  const valor = parseNumeroBR(document.getElementById('trk-valor').value);
+
+  if (isNaN(qtd) || qtd <= 0 || isNaN(valor) || valor <= 0) {
+    alert('Preencha a quantidade e o valor pago em R$ corretamente.');
+    return;
+  }
+
+  const dados = carregarDadosMes();
+
+  // Se estiver editando o último lançamento, estorna o valor anterior antes de somar o novo
+  if (modoEdicao && dados.ultimo) {
+    const ant = dados.ultimo;
+    dados[ant.tipo].valor = Math.max(0, Math.round((dados[ant.tipo].valor - ant.valor) * 100) / 100);
+    dados[ant.tipo].qtd = Math.max(0, Math.round((dados[ant.tipo].qtd - ant.qtd) * 100) / 100);
+  }
+
+  // Soma o novo lançamento
+  dados[tipo].valor = Math.round((dados[tipo].valor + valor) * 100) / 100;
+  dados[tipo].qtd = Math.round((dados[tipo].qtd + qtd) * 100) / 100;
+
+  const hoje = new Date();
+  const dataCurta = String(hoje.getDate()).padStart(2, '0') + '/' + String(hoje.getMonth() + 1).padStart(2, '0');
+
+  dados.ultimo = {
+    tipo: tipo,
+    qtd: qtd,
+    valor: valor,
+    data: dataCurta
+  };
+
+  // Limpa campos e sai do modo edição
+  document.getElementById('trk-qtd').value = '';
+  document.getElementById('trk-valor').value = '';
+  modoEdicao = false;
+  const btn = document.getElementById('trk-btn-salvar');
+  btn.textContent = 'Registrar Abastecimento';
+  btn.classList.remove('editando');
+
+  salvarDadosMes(dados);
+}
+
+function prepararEdicao() {
+  const dados = carregarDadosMes();
+  if (!dados.ultimo) return;
+
+  const u = dados.ultimo;
+  document.getElementById('trk-tipo').value = u.tipo;
+  atualizarPlaceholderQtd();
+  document.getElementById('trk-qtd').value = u.qtd.toString().replace('.', ',');
+  document.getElementById('trk-valor').value = u.valor.toFixed(2).replace('.', ',');
+
+  modoEdicao = true;
+  const btn = document.getElementById('trk-btn-salvar');
+  btn.textContent = 'Salvar Alteração';
+  btn.classList.add('editando');
+  document.getElementById('trk-qtd').focus();
+}
+
+function zerarMes() {
+  if (!confirm('Deseja encerrar o período e zerar os gastos de gasolina e eletricidade deste mês?')) {
+    return;
+  }
+  modoEdicao = false;
+  const btn = document.getElementById('trk-btn-salvar');
+  btn.textContent = 'Registrar Abastecimento';
+  btn.classList.remove('editando');
+
+  salvarDadosMes({
+    gasolina: { valor: 0, qtd: 0 },
+    eletricidade: { valor: 0, qtd: 0 },
+    ultimo: null
+  });
+}
+
+function renderizarControleMes() {
+  const dados = carregarDadosMes();
+
+  document.getElementById('trk-total-gas').textContent = formatarMoeda(dados.gasolina.valor);
+  document.getElementById('trk-qtd-gas').textContent = `${dados.gasolina.qtd.toFixed(1).replace('.', ',')} L acumulados`;
+
+  document.getElementById('trk-total-ele').textContent = formatarMoeda(dados.eletricidade.valor);
+  document.getElementById('trk-qtd-ele').textContent = `${dados.eletricidade.qtd.toFixed(1).replace('.', ',')} kWh acumulados`;
+
+  const totalGeral = dados.gasolina.valor + dados.eletricidade.valor;
+  document.getElementById('trk-total-geral').textContent = formatarMoeda(totalGeral);
+
+  const textoUltimo = document.getElementById('trk-ultimo-texto');
+  const btnEdit = document.getElementById('trk-btn-edit');
+
+  if (dados.ultimo) {
+    const u = dados.ultimo;
+    const nomeTipo = u.tipo === 'gasolina' ? 'Gas' : 'Elét';
+    const un = u.tipo === 'gasolina' ? 'L' : 'kWh';
+    const unitario = (u.valor / u.qtd).toFixed(2).replace('.', ',');
+    const qtdFmt = u.qtd.toFixed(1).replace('.', ',');
+
+    textoUltimo.textContent = `${u.data} • ${nomeTipo}: ${qtdFmt}${un} • ${formatarMoeda(u.valor)} (R$ ${unitario}/${un})`;
+    btnEdit.style.display = 'inline-block';
+  } else {
+    textoUltimo.textContent = 'Nenhum registro no mês atual.';
+    btnEdit.style.display = 'none';
+  }
+}
+
+// Inicializa os valores salvos ao abrir o app
+renderizarControleMes();
+</script>
+</body></html>
